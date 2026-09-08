@@ -69,13 +69,6 @@ const translations = {
     project_4_point_1: "情報の分かりやすさを重視",
     project_4_point_2: "継続更新に対応する運用設計",
     project_4_point_3: "信頼性の高い品質管理",
-    project_5_tag: "Content App",
-    project_5_title: "Content Delivery App",
-    project_5_text:
-      "継続配信型のコンテンツサービスにおいて、通知、更新サイクル、ユーザー体験の安定性が重要な案件。長く使われるサービスを支える運用品質の観点が活きる領域です。",
-    project_5_point_1: "通知と更新サイクルの安定化",
-    project_5_point_2: "継続運用を前提にした品質管理",
-    project_5_point_3: "ユーザー体験の維持改善",
     contact_eyebrow: "Contact",
     contact_title: "お問い合わせ",
     contact_text:
@@ -149,13 +142,6 @@ const translations = {
     project_4_point_1: "Clear information design",
     project_4_point_2: "Operation for ongoing updates",
     project_4_point_3: "Reliable quality control",
-    project_5_tag: "Content App",
-    project_5_title: "Content Delivery App",
-    project_5_text:
-      "A continuously updated content service where notification quality, content release cycle, and stable user experience all matter over time.",
-    project_5_point_1: "Stable notification and update cycle",
-    project_5_point_2: "Quality management for continuous operation",
-    project_5_point_3: "User experience maintenance",
     contact_eyebrow: "Contact",
     contact_title: "Get in touch",
     contact_text:
