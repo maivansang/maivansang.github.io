@@ -84,12 +84,24 @@ img {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  font-weight: 800;
-  color: #04101a;
-  background: linear-gradient(135deg, #dff7ff, var(--primary));
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#0a0f1d, #0a0f1d) padding-box,
+    linear-gradient(135deg, #dff7ff, var(--primary)) border-box;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+}
+
+.brand-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: scale(1.18);
 }
 
 .brand-text {
@@ -187,7 +199,8 @@ img {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  /* Cover column is 120% of the copy-balanced split so the photo reads large. */
+  grid-template-columns: 0.86fr 1.14fr;
   gap: 30px;
   align-items: center;
 }
@@ -264,42 +277,27 @@ img {
 .hero-cover-card {
   position: relative;
   overflow: hidden;
-  min-height: 360px;
+  /* Matches the photo (915x610) exactly, so the whole frame is always shown. */
+  aspect-ratio: 3 / 2;
   background: var(--surface);
 }
 
 .hero-cover-image {
   width: 100%;
   height: 100%;
-  min-height: 360px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .hero-cover-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 14, 28, 0.2), rgba(8, 14, 28, 0.72));
-}
-
-.hero-avatar-wrap {
-  position: absolute;
-  left: 22px;
-  bottom: -18px;
-  width: 130px;
-  height: 130px;
-  padding: 4px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d9f6ff, #7dd3fc);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
-}
-
-.hero-avatar-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 18%;
-  border-radius: 50%;
-  border: 2px solid rgba(8, 14, 28, 0.82);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 28, 0.34) 0%,
+    rgba(8, 14, 28, 0.08) 42%,
+    rgba(8, 14, 28, 0.08) 78%,
+    rgba(8, 14, 28, 0.3) 100%
+  );
 }
 
 .metrics-band {
@@ -494,11 +492,6 @@ img {
   .hero h1 {
     max-width: none;
   }
-
-  .hero-cover-card,
-  .hero-cover-image {
-    min-height: 300px;
-  }
 }
 
 @media (max-width: 860px) {
@@ -534,17 +527,5 @@ img {
   .project-meta {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .hero-cover-card,
-  .hero-cover-image {
-    min-height: 250px;
-  }
-
-  .hero-avatar-wrap {
-    width: 104px;
-    height: 104px;
-    left: 16px;
-    bottom: -14px;
   }
 }
